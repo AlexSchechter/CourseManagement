@@ -30,7 +30,7 @@ namespace CourseManagement.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public bool? Graduated { get; set; }
-        public int TeacherProfileId { get; set; }
+        public int? TeacherProfileId { get; set; }
 
         [InverseProperty("Teacher")]
         public virtual TeacherProfile TeacherProfile { get; set; }
@@ -45,7 +45,7 @@ namespace CourseManagement.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("AzureConnection", throwIfV1Schema: false)
         {
         }
 
@@ -58,5 +58,17 @@ namespace CourseManagement.Models
         public DbSet<CourseStudent> CourseStudents { get; set; }
         public DbSet<IndividualLecture> IndividualLectures { get; set; }
         public DbSet<TeacherProfile> TeacherProfiles { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<TeacherProfile>()
+            .HasKey(t => t.TeacherProfileId);
+
+            modelBuilder.Entity<ApplicationUser>()
+                .HasOptional(c => c.TeacherProfile)
+                .WithRequired(d => d.Teacher);
+                //.Map(m => m.MapKey("TeacherId"));               ;
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
