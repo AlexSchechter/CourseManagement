@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LayoutController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -622,7 +623,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\Home\index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -699,6 +700,21 @@
     <Content Include="Assests\fonts\opan-sans\OpenSans-Semibold-webfont.eot" />
     <Content Include="Assests\fonts\opan-sans\OpenSans-Semibold-webfont.ttf" />
     <Content Include="Assests\fonts\opan-sans\OpenSans-Semibold-webfont.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Courses\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Courses\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Courses\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Courses\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Courses\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
