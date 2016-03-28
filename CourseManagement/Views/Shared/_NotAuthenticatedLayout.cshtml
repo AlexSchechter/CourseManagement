@@ -1,45 +1,41 @@
 ﻿<!DOCTYPE html>
-<!--[if IE 9 ]><html class="ie ie9" lang="en" class="no-js"> <![endif]-->
-<!--[if !(IE)]><!-->
-<html lang="en" class="no-js">
-<!--<![endif]-->
+<html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
 <head>
-    <title>Log In Alt | BugTracker - Household Budget Manager</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="_NotAuthenticatedLayout.cshtml">
-    <meta name="author" content="Alexander Schechter">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="UTF-8">
+    <meta name="description" content="Violate Responsive Admin Template">
+    <meta name="keywords" content="Super Admin, Admin, Template, Bootstrap">
+    <title>Super Admin Responsive Template</title>
+
     <!-- CSS -->
-    <link href="~/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="~/assets/css/ionicons.css" rel="stylesheet" type="text/css">
-    <link href="~/assets/css/main.css" rel="stylesheet" type="text/css">
-    <link href="~/assets/css/custom-styles.css" rel="stylesheet" type="text/css">
-    <link href="~/assets/css/bootstrap-social.css" rel="stylesheet" />
-    <link href="~/assets/css/font-awesome.min.css" rel="stylesheet" />
-    <!-- Google Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,700' rel='stylesheet' type='text/css'>
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/assets/ico/bugeter-favicon144x144.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/assets/ico/BugTracker-favicon114x114.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/assets/ico/BugTracker-favicon72x72.png">
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="~/assets/ico/BugTracker-favicon57x57.png">
-    <link rel="shortcut icon" href="~/assets/img/bug-tracker57x57.png">
+    <link href="~/Assests/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Assests/css/form.css" rel="stylesheet">
+    <link href="~/Assests/css/style.css" rel="stylesheet">
+    <link href="~/Assests/css/animate.css" rel="stylesheet">
+    <link href="~/Assests/css/generics.css" rel="stylesheet">
 </head>
-<body class="middle-content page-login-social">
-    <!-- TOP NAV BAR -->
-    <nav class="top-bar navbar-fixed-top" role="navigation">
-        <a id="site-logo" href='@Url.Action("Index", "Home")'>
-            <img src='@Url.Content("~/assets/img/BugTracker-logo.png")' alt="BugTracker Logo" />
-        </a>
-    </nav>
-    <!-- END TOP NAV BAR -->
-    <div class="container-fluid">
+<body id="skin-blur-violate">
+    <section id="login">
+        <header>
+            <h1>SUPER ADMIN</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu risus. Curabitur commodo lorem fringilla enim feugiat commodo sed ac lacus.</p>
+        </header>
+
+        <div class="clearfix"></div>
         @RenderBody()
-    </div>
-    <!-- Javascript -->
-    <script src="~/assets/js/jquery/jquery-2.1.0.min.js"></script>
-    <script src="~/assets/js/bootstrap/bootstrap.js"></script>
-    <script src="~/assets/js/queen-form-layouts.js"></script>
-    <script src="~/assets/js/custom-js.js"></script>
+    </section>
+
+    <!-- Javascript Libraries -->
+    <!-- jQuery -->
+    <script src="~/Assests/js/jquery.min.js"></script> <!-- jQuery Library -->
+    <!-- Bootstrap -->
+    <script src="~/Assests/js/bootstrap.min.js"></script>
+
+    <!--  Form Related -->
+    <script src="~/Assests/js/icheck.js"></script> <!-- Custom Checkbox + Radio -->
+    <!-- All JS functions -->
+    <script src="~/Assests/js/functions.js"></script>
 </body>
 </html>

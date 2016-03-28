@@ -41,22 +41,21 @@ namespace BugTracker.Controllers
 
         }
 
-      
-        //public UserRole GetRole()
-        //{
-        //    string roleId = UserManager.FindById(GetUserInfo().Id).Roles.First().RoleId;           
-        //    return (UserRole)Enum.Parse(typeof(UserRole), roleManager.FindById(roleId).Name);
-        //}
+        protected UserRole GetRole()
+        {
+            ApplicationUser user = GetUserInfo();
+            return (UserRole)Enum.Parse(typeof(UserRole), UserManager.FindById(user.Id).Roles.FirstOrDefault().ToString());
+        }
+        
+        protected UserRole GetRole(string userId)
+        {
+            return (UserRole)Enum.Parse(typeof(UserRole), UserManager.FindById(userId).Roles.FirstOrDefault().ToString());
+        }
 
-
-        //public UserRole? GetRole(string userId)
-        //{
-        //    if (userId == null)
-        //        return null;
-
-        //    string roleId = UserManager.FindById(userId).Roles.First().RoleId;
-        //    return (UserRole)Enum.Parse(typeof(UserRole), roleManager.FindById(roleId).Name);
-        //}
+        protected IEnumerable<ApplicationUser> GetTeachers()
+        {
+            return db.Users.ToList().Where(u => UserManager.IsInRole(u.Id, UserRole.Teacher.ToString()));
+        }
 
         //public string GetRoleString(string userId)
         //{

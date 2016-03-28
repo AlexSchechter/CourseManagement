@@ -26,15 +26,13 @@ namespace CourseManagement.Controllers
         // GET: Courses/Details/5
         public async Task<ActionResult> Details(int? id)
         {
-            if (id == null)
-            {
+            if (id == null)            
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            
             Course course = await db.Courses.FindAsync(id);
-            if (course == null)
-            {
+            if (course == null)           
                 return HttpNotFound();
-            }
+            
             return View(course);
         }
 
@@ -42,7 +40,7 @@ namespace CourseManagement.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
-            ViewBag.TeacherId = new SelectList(db.Users, "Id", "FirstName");
+            ViewBag.TeacherId = new SelectList(GetTeachers(), "Id", "FirstName");
             return View();
         }
 
