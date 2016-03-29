@@ -1,5 +1,6 @@
 ﻿@model CourseManagement.Models.Course
 
+
 <div class="col-md-12">
     <div class="tile">
         <h1 class="tile-title">Create New Course</h1>
@@ -7,16 +8,15 @@
         @using (Html.BeginForm("Create", "Courses", FormMethod.Post, new { @class = "p-15", @role = "form" }))
         {
             @Html.AntiForgeryToken()
-
-
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group m-b-15">
                 @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
                 @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control input-sm" } })
+               
             </div>        
             <div class="form-group m-b-15">
                 @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.Description, new { @class = "form-control m-b-10" } )
             </div>
             <div class="form-group m-b-15">
                 @Html.LabelFor(model => model.TeacherId, "TeacherId", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -24,18 +24,17 @@
             </div>
             <div class="form-group m-b-15">
                 @Html.LabelFor(model => model.ExamDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                @Html.EditorFor(model => model.ExamDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.ExamDate, new { @class = "form-control", @id = "datepicker" } )
             </div>
 
             <div class="form-group m-b-15">
                 @Html.LabelFor(model => model.ExamRoom, htmlAttributes: new { @class = "control-label col-md-2" })
                 @Html.EditorFor(model => model.ExamRoom, new { htmlAttributes = new { @class = "form-control" } })
             </div>             
-            <input type="submit" value="Create" class="btn btn-sm" />
+            <input type="submit" value="Create" class="btn" />
             @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-sm" })
-              
-          
-
+             
         }
     </div>
 </div> 
+
